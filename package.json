@@ -1,0 +1,24 @@
+{
+  "name": "universal_chat_room",
+  "version": "1.0.0",
+  "description": "Real time chat app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev" : "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Malek1117/universal_chat_room.git"
+  },
+  "author": "Shahnawaz Malek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Malek1117/universal_chat_room/issues"
+  },
+  "homepage": "https://github.com/Malek1117/universal_chat_room#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "socket.io": "^4.4.0"
+  }
+}
