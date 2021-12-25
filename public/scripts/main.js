@@ -1,5 +1,7 @@
 const chat_messages = document.getElementById("chat_area");
 const users_list = document.getElementById("users");
+const send_button = document.getElementById("add_message");
+const input = document.getElementById("message");
 
 const user = window.location.search.split("=")[1];
 
@@ -37,3 +39,31 @@ const add_users_dom = (users)=>{
         users_list.appendChild(li);
     })
 }
+
+send_button.addEventListener("click",()=>{
+    let msg = input.value.trim();
+
+    if(!msg){
+        return false
+    }
+
+    socket.emit("chat_message", msg);
+
+    input.value = "";
+    input.focus();
+});
+
+input.addEventListener("keypress",(e)=>{
+    if(e.key === "Enter"){
+        let msg = input.value.trim();
+
+        if(!msg){
+            return false
+        }
+
+        socket.emit("chat_message", msg);
+
+        input.value = "";
+        input.focus();
+    }
+});

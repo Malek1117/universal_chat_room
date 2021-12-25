@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const server = http.createServer(app);
 const message_format = require('./utils/message_format.js');
-const {user_join, all_users, user_leave} = require('./utils/users.js');
+const {user_join, all_users, user_leave, current_user} = require('./utils/users.js');
 
 const socket_io = require('socket.io');
 const io = socket_io(server);
@@ -39,6 +39,12 @@ io.on('connection', (socket) => {
             })
         }
     });
+
+    socket.on("chat_message", (msg)=>{
+        const user = current_user(socket.id);
+
+        io.emit("message", message_format(user.username, msg))
+    })
 
 })
 

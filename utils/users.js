@@ -17,8 +17,12 @@ const user_leave = (id)=>{
     return undefined
 }
 
+const current_user = (id)=>{
+    return users.find(e=>e.id===id);
+}
+
 const all_users = ()=>{
     return users
 }
 
-module.exports ={ user_join, all_users, user_leave}
+module.exports ={ user_join, all_users, user_leave, current_user}
