@@ -34,6 +34,8 @@ const add_message_dom = ({username, text, time})=>{
 const add_users_dom = (users)=>{
     users_list.innerHTML = "";
 
+    document.getElementById("total_users").innerHTML = users.length;
+
     users.forEach((e)=>{
         const li = document.createElement("li");
         li.innerHTML = e.username;
