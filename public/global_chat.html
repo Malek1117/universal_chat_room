@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chat Room || Global Chat</title>
+    <link rel="icon" type="image/ico" href="./logo/logo.svg" />
+    <link rel="stylesheet" href="./styles/chat_room.css" />
+</head>
+<body>
+    <div class="container">
+        <div id="header">
+            <div>
+                <img alt="logo" src="./logo/logo.svg"/>
+                <h1>Global Chat</h1>
+            </div>
+            <a id="leave_room" class="btn">Leave Room</a>
+        </div>
+        <div id="main">
+            <div id="users_detail">
+                <h2>Users List</h2>
+                <ol id="users"></ol>
+            </div>
+            <div id="chat_area"></div>
+        </div>
+        <div id="footer">
+            <input id="message" type="text" placeholder="Enter Message Here" required />
+            <button id="add_message" class="btn">Send</button>
+        </div>
+    </div>
+
+    <script
+      src="https://cdn.socket.io/4.4.0/socket.io.min.js"
+      integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
